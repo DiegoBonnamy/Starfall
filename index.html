@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starfall</title>
+    <link rel="icon" type="image/png" href="images/icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <div id="game-menu">
+        <div class="menu-stars"></div>
+        <div class="menu">
+
+            <!-- Menu principal -->
+            <div class="main-menu">
+                <img src="images/logo.png" alt="logo" class="main-logo" />
+                <button id="play-button" class="menu-button">Jouer</button>
+                <button id="garage-button" class="menu-button">Vaisseaux</button>
+            </div>
+
+            <!-- Carrousel de maps -->
+            <div id="map-carousel">
+                <button id="prev-map" class="carousel-button">&#9664;</button>
+                <div class="map-container">
+                    <img id="map-image" src="images/map1.jpg" alt="Carte sélectionnée">
+                    <p id="map-name">Ring of Ruin</p>
+                </div>
+                <button id="next-map" class="carousel-button">&#9654;</button>
+            </div>  
+
+            <div class="menu-best-score">Meilleur score : <span id="bestScore">0</span></div>
+
+        </div>
+    </div>
+
+    <div id="game-garage">
+        <div class="menu-stars"></div>
+
+        <!-- Section Ships -->
+        <div class="garage-carousel">
+            <canvas class="garage-canvas" id="shipCanvas" width="200" height="100"></canvas>
+            <div class="garage-progress-bar-container">
+                <p class="progress-label">Vitesse</p>
+                <div class="garage-progress-bar">
+                    <div id="speed" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="garage-progress-bar-container">
+                <p class="progress-label">Accélération</p>
+                <div class="garage-progress-bar">
+                    <div id="acceleration" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="garage-progress-bar-container">
+                <p class="progress-label">Santé</p>
+                <div class="garage-progress-bar">
+                    <div id="health" style="width: 0%;"></div>
+                </div>
+            </div>
+            <div class="garage-controls">
+                <button class="garage-carousel-button" id="previousShipButton">&#9664;</button>
+                <button class="garage-select-button" id="selectShipButton">Select</button>
+                <button class="garage-carousel-button" id="nextShipButton">&#9654;</button>
+            </div>
+        </div>
+
+        <!-- Section Power-Up -->
+        <div class="garage-carousel">
+            <div id="powerupDisplay">
+                <i id="powerupIcon" class="fa-solid fa-ban"></i>
+                <p id="powerupName"></p>
+            </div>
+            
+            <div class="garage-controls">
+                <button class="garage-carousel-button" id="previousPowerupButton">&#9664;</button>
+                <button class="garage-select-button" id="selectPowerupButton">Select</button>
+                <button class="garage-carousel-button" id="nextPowerupButton">&#9654;</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="game-container">
+        <div class="stars"></div>
+
+        <!-- Maps -->
+        <div id="map-ring-of-ruin">
+            <div class="planet-container">
+                <div class="planet"></div>
+                <div class="planet-ring"></div>
+            </div>
+        </div>
+        <div id="map-moonfall-nexus">
+            <div class="nexus-planet-container">
+                <div class="nexus-planet"></div>
+            </div>
+            <div class="nexus-moon-container">
+                <div class="nexus-moon"></div>
+            </div>
+        </div>
+        <div id="map-void-drift">
+            <div class="super-nova-container">
+                <div class="super-nova-planet"></div>
+            </div>
+        </div>
+        <canvas class="game-canvas" id="gameCanvas"></canvas>
+        <div id="hud">
+            <!-- Santé -->
+            <div id="health-container">
+                <i class="fa-solid fa-heart" id="health-icon"></i>
+                <div id="health-bar">
+                    <div id="health-progress"></div>
+                </div>
+            </div>
+            <!-- Tirs -->
+            <div id="cooldown-container">
+                <i class="fa-regular fa-circle-dot" id="cooldown-icon"></i>
+                <div id="cooldown-bar">
+                    <div id="cooldown-progress"></div>
+                </div>
+            </div>
+            <!-- Surchauffe -->
+            <div id="overheat-container">
+                <i class="fa-solid fa-fire-flame-curved" id="overheat-icon"></i>
+                <div id="overheat-bar">
+                    <div id="overheat-progress"></div>
+                </div>
+            </div>
+            <!-- Accélération -->
+            <div id="throttle-container">
+                <i class="fa-solid fa-shuttle-space" id="throttle-icon"></i>
+                <div id="throttle-bar">
+                    <div id="throttle-progress"></div>
+                </div>
+            </div>
+            <div id="score-display">Score : 0</div>
+        </div>
+
+        <!-- Power-Ups -->
+        <div id="powerup-container">
+            <div id="powerup-icon">
+                <i id="powerup-icon-i" class="fa-solid"></i>
+            </div>
+            <div id="powerup-bar">
+                <div id="powerup-progress"></div>
+            </div>
+        </div>
+
+        <div id="game-over-screen">
+            <h1>GAME OVER</h1>
+            <p>Score final : <span id="final-score">0</span></p>
+            <button onclick="restartGame()">Rejouer</button>
+        </div>
+
+        <div id="controls-container">
+            <!-- Stick de gauche (Mouvement) -->
+            <div id="left-stick" class="joystick-container">
+                <div class="left-joystick"></div>
+            </div>
+        
+            <!-- Stick de droite (Tir) -->
+            <div id="right-stick" class="joystick-container">
+                <div class="right-joystick"></div>
+            </div>
+        </div>
+        
+    </div>
+
+    <script src="design.js"></script>
+    <!-- Scipts init -->
+    <script src="js/sounds.js"></script>
+    <script src="js/utils.js"></script>
+    <!-- Scripts modules -->
+    <script src="js/bullets.js"></script>
+    <script src="js/enemy.js"></script>
+    <script src="js/garage.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/powerup.js"></script>
+    <script src="js/ships.js"></script>
+    <!-- Main script -->
+    <script src="js/engine.js"></script>
+</body>
+</html>
