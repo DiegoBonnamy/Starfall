@@ -1,6 +1,6 @@
 // UI Management
 
-let isMobile = window.matchMedia("(max-height: 720px)").matches;
+let isMobile = (window.matchMedia("(max-height: 720px)").matches) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
 let scale = 1;
 if (isMobile) {
     scale = 0.5;
@@ -51,6 +51,15 @@ const throttleBar = document.getElementById("throttle-progress");
 // Menu management
 
 playButton.addEventListener('click', function() {
+    const el = document.documentElement;
+    if (el.requestFullscreen) {
+        el.requestFullscreen();
+    } else if (el.webkitRequestFullscreen) {
+        el.webkitRequestFullscreen();
+    } else if (el.msRequestFullscreen) {
+        el.msRequestFullscreen();
+    }
+
     gameMenu.style.display = 'none';
     gameContainer.style.display = 'flex';
     resizeCanvas();
