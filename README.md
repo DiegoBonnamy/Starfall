@@ -1,6 +1,6 @@
 # Starfall: Last Frontier
-
-![Logo du jeu](images/logo.png)  
+ 
+<img src="images/logo.png" alt="logo" width="250"/>
 
 Bienvenue dans **Starfall: Last Frontier**, un jeu de survie spatial intense où vous incarnez un pilote solitaire, traversant les confins d’un univers en ruine. Choisissez votre vaisseau, équipez-vous d’un puissant module d’amélioration et préparez-vous à affronter les dangers de l’espace !
 
@@ -26,11 +26,11 @@ Chaque vaisseau possède ses propres forces et faiblesses. Sélectionnez celui q
 
 | Vaisseau | Vitesse 🚀 | Accélération ⚡ | Santé ❤️ |
 |----------|-----------|----------------|----------|
-| **Striker** ![Striker](./images/striker.png) | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
-| **Sentinel** ![Sentinel](./images/sentinel.png) | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
-| **Phantom** ![Phantom](./images/phantom.png) | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐ |
-
-*(Ajoutez une brève description pour chaque vaisseau ici.)*
+| **Spectre 9** | ⭐⭐ | ⭐⭐ | ⭐⭐ |
+| **Faucon Millenium** | ⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ |
+| **X-Wing** | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐ |
+| **Croiseur** | ⭐ | ⭐ | ⭐⭐⭐⭐⭐ |
+| **A-Wing** | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐ |
 
 ---
 
@@ -40,11 +40,11 @@ Choisissez un power-up avant chaque partie pour renforcer votre vaisseau.
 
 | Power-up | Effet |
 |----------|-------|
-| **Droid Repair** ![Droid Repair](./images/droid_repair.png) | Répare lentement votre vaisseau en cours de partie. |
-| **Boost Overdrive** ![Boost Overdrive](./images/boost_overdrive.png) | Augmente temporairement la vitesse et l’accélération. |
-| **Shield Generator** ![Shield Generator](./images/shield_generator.png) | Ajoute un bouclier protecteur contre un impact. |
-
-*(Ajoutez des descriptions plus détaillées si nécessaire.)*
+| **Droid Repair** | Régénère une faible quantité de santé |
+| **Deflector Shield** | Réduit les dégats subits pendant une courte période |
+| **Thermal Surge** | Stoppe la surchauffe et augmente la cadence de tir |
+| **Overdrive Boost** | Augmente la vitesse et la manoueuvrabilité du vaisseau |
+| **Nova Core** | Provoque une large explosion détruisant tout sur son passage |
 
 ---
 
@@ -54,17 +54,15 @@ L’environnement dans lequel vous jouez influence fortement la difficulté et l
 
 ### **Ring of Ruin**  
 ![Ring of Ruin](./images/ring_of_ruin.png)  
-Une planète rouge-orangée entourée d’un anneau de débris en perpétuel mouvement. Les collisions sont fréquentes, et la visibilité réduite.
+Une planète rouge-orangée entourée d’un anneau de débris en perpétuel mouvement.
 
 ### **Moonfall Nexus**  
 ![Moonfall Nexus](./images/moonfall_nexus.png)  
-Une planète bleue avec sa lune, traversée par de puissantes tempêtes cosmiques. Attention aux courants gravitationnels !
+Une planète bleue avec sa lune, traversée par de puissantes tempêtes cosmiques. Attention aux astéroides !
 
 ### **Void Drift**  
 ![Void Drift](./images/void_drift.png)  
 Une zone instable remplie d’astéroïdes et d’une supernova en explosion. Seuls les pilotes les plus habiles peuvent survivre ici.
-
-*(Ajoutez ici des détails sur les effets et les dangers de chaque carte.)*
 
 ---
 
@@ -74,12 +72,13 @@ Les commandes sont simples mais demandent une bonne maîtrise pour éviter les o
 
 | Action | Touche |
 |--------|--------|
-| **Se déplacer à gauche** | ← (Flèche gauche) |
-| **Se déplacer à droite** | → (Flèche droite) |
-| **Utiliser le boost** | Espace |
-| **Activer le power-up** | Majuscule gauche (Shift) |
-
-*(Ajoutez ici des commandes spécifiques si nécessaires.)*
+| **Gaz avant** | z ou ↑ (Flèche gauche) |
+| **Gaz arrière** | s ou ↓ (Flèche gauche) |
+| **Se déplacer à gauche** | q ou ← (Flèche gauche) |
+| **Se déplacer à droite** | d ou → (Flèche droite) |
+| **Viser** | Souris |
+| **Tirer** | Espace |
+| **Activer le power-up** | e |
 
 ---
 
