@@ -79,8 +79,8 @@ function moveEnemies(player) {
     });
 }
 
-function drawEnemies(ctx) {
+function drawEnemies(ctx, scale = 1) {
     enemies.forEach(enemy => {
-        drawShip(ctx, enemy.ship, enemy.x, enemy.y, enemy.angle);
+        drawShip(ctx, enemy.ship, enemy.x, enemy.y, enemy.angle, scale);
     });
 }

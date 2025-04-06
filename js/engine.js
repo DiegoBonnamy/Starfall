@@ -1,6 +1,10 @@
 // UI Management
 
 let isMobile = window.matchMedia("(max-height: 720px)").matches;
+let scale = 1;
+if (isMobile) {
+    scale = 0.5;
+}
 
 const canvas = document.getElementById("gameCanvas");
 const gameMenu = document.getElementById("game-menu");
@@ -24,6 +28,19 @@ function resizeCanvas() {
 // Appeler la fonction de redimensionnement au chargement de la page et lors du redimensionnement de la fenêtre
 resizeCanvas(canvas);
 window.addEventListener("resize", resizeCanvas);
+
+// Mobile orientaion
+
+// Initial check
+handleOrientationChange();
+
+document.addEventListener('gesturestart', function (e) {
+    e.preventDefault();
+});
+
+// Listen to changes
+window.addEventListener("resize", handleOrientationChange);
+window.addEventListener("orientationchange", handleOrientationChange);
 
 const overheatBar = document.getElementById("overheat-progress");
 const cooldownBar = document.getElementById("cooldown-progress")
@@ -391,10 +408,10 @@ function gameLoop() {
     shoot(mouseX, mouseY, rightStick.angle);
 
     // Draws
-    drawPlayer(ctx);
+    drawPlayer(ctx, scale);
     drawBullets(ctx, player.bullets, "#ffff00");
-    drawEnemies(ctx);
-    drawAsteroids(ctx);
+    drawEnemies(ctx, scale);
+    drawAsteroids(ctx, scale);
     enemies.forEach(enemy => drawBullets(ctx, enemy.bullets, "#ff0000"));
     drawExplosions(ctx);
     drawProtonExplosions(ctx);

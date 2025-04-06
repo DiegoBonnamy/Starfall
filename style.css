@@ -26,6 +26,28 @@ p, button, .menu-best-score {
     font-family: "Orbitron", sans-serif;
 }
 
+#rotate-device-overlay {
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background-color: #000C;
+    color: white;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2em;
+    font-size: 1.2em;
+    backdrop-filter: blur(5px);
+}
+
+#rotate-device-overlay img {
+    width: 80px;
+    margin-top: 1em;
+    filter: invert(1);
+}  
+
 #game-container {
     position: fixed;
     width: 100%;

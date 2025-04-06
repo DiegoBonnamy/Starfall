@@ -38,8 +38,8 @@ const player = {
     powerup: 0
 };
 
-function drawPlayer(ctx) {
-    drawShip(ctx, player.ship, player.x, player.y, player.angle)
+function drawPlayer(ctx, scale = 1) {
+    drawShip(ctx, player.ship, player.x, player.y, player.angle, scale);
 }
 
 function setThrottle(forward) {

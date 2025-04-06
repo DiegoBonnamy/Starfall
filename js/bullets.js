@@ -238,11 +238,12 @@ function moveAsteroids(canvas) {
     });
 }
 
-function drawAsteroids(ctx) {
+function drawAsteroids(ctx, scale = 1) {
     asteroids.forEach(asteroid => {
         ctx.save();
         ctx.translate(asteroid.x, asteroid.y);
         ctx.rotate(asteroid.angle);
+        ctx.scale(scale, scale);
 
         let scale = asteroid.size / 50; // Normalisation (50 = taille de base)
 

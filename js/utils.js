@@ -29,3 +29,16 @@ function getStatsCoefficient() {
         return 0.5; // Mobile
     }
 }
+
+function isPortrait() {
+    return window.innerHeight > window.innerWidth;
+}
+
+function handleOrientationChange() {
+    const overlay = document.getElementById("rotate-device-overlay");
+    if (isPortrait()) {
+      overlay.style.display = "flex";
+    } else {
+      overlay.style.display = "none";
+    }
+}

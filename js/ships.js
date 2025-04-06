@@ -123,10 +123,11 @@ const ships = {
 }
 
 // Faucon Millenium
-function drawMillenniumFalcon(ctx, x, y, angle) {
+function drawMillenniumFalcon(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Corps principal
     ctx.beginPath();
@@ -149,10 +150,11 @@ function drawMillenniumFalcon(ctx, x, y, angle) {
 }
 
 // X-Wing
-function drawXWing(ctx, x, y, angle) {
+function drawXWing(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Corps central
     ctx.fillStyle = "#909090";
@@ -202,10 +204,11 @@ function drawXWing(ctx, x, y, angle) {
 }
 
 // Spectre 9
-function drawSpectre9(ctx, x, y, angle) {
+function drawSpectre9(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Corps central
     ctx.fillStyle = "#c9c9c9";
@@ -304,10 +307,11 @@ function drawSpectre9(ctx, x, y, angle) {
 }
 
 // Croiseur
-function drawCroiseur(ctx, x, y, angle) {
+function drawCroiseur(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Corps central
     ctx.fillStyle = "#c9c9c9";
@@ -357,10 +361,11 @@ function drawCroiseur(ctx, x, y, angle) {
 }
 
 // A-Wing
-function drawAWing(ctx, x, y, angle) {
+function drawAWing(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
     
     // Corps central
     ctx.fillStyle = "#ededed";
@@ -420,10 +425,11 @@ function drawAWing(ctx, x, y, angle) {
 }
 
 // Destroyer
-function drawDestroyer(ctx, x, y, angle) {
+function drawDestroyer(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Corps principal
     ctx.beginPath();
@@ -458,10 +464,11 @@ function drawDestroyer(ctx, x, y, angle) {
 }
 
 // TIE
-function drawTIE(ctx, x, y, angle) {
+function drawTIE(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
   
     // Corps central du TIE (sphère)
     ctx.beginPath();
@@ -505,10 +512,11 @@ function drawTIE(ctx, x, y, angle) {
 }
 
 // Interceptor 
-function drawInterceptor(ctx, x, y, angle) {
+function drawInterceptor(ctx, x, y, angle, scale = 1) {
     ctx.save();
     ctx.translate(x, y);
     ctx.rotate(angle);
+    ctx.scale(scale, scale);
 
     // Coprs principal
     ctx.fillStyle = "#404040";
@@ -538,38 +546,38 @@ function drawInterceptor(ctx, x, y, angle) {
     ctx.restore();
 }
 
-function drawShip(ctx, ship, x, y, angle) {
+function drawShip(ctx, ship, x, y, angle, scale = 1) {
     switch (ship) {
         case 0:
-            drawSpectre9(ctx, x, y, angle);
+            drawSpectre9(ctx, x, y, angle, scale);
             break;
 
         case 1:
-            drawMillenniumFalcon(ctx, x, y, angle);
+            drawMillenniumFalcon(ctx, x, y, angle, scale);
             break;
 
         case 2:
-            drawXWing(ctx, x, y, angle);
+            drawXWing(ctx, x, y, angle, scale);
             break;
 
         case 3:
-            drawCroiseur(ctx, x, y, angle);
+            drawCroiseur(ctx, x, y, angle, scale);
             break;
 
         case 4:
-            drawAWing(ctx, x, y, angle);
+            drawAWing(ctx, x, y, angle, scale);
             break;
 
         case 5:
-            drawTIE(ctx, x, y, angle);
+            drawTIE(ctx, x, y, angle, scale);
             break;
 
         case 6:
-            drawDestroyer(ctx, x, y, angle);
+            drawDestroyer(ctx, x, y, angle, scale);
             break;
 
         case 7:
-            drawInterceptor(ctx, x, y, angle);
+            drawInterceptor(ctx, x, y, angle, scale);
             break;
     
         default:
