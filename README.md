@@ -1,6 +1,6 @@
 # Starfall: Last Frontier
  
-<img src="images/logo.png" alt="logo" width="250"/>
+![Logo](images/logo.png)  
 
 Bienvenue dans **Starfall: Last Frontier**, un jeu de survie spatial intense où vous incarnez un pilote solitaire, traversant les confins d’un univers en ruine. Choisissez votre vaisseau, équipez-vous d’un puissant module d’amélioration et préparez-vous à affronter les dangers de l’espace !
 
@@ -53,15 +53,15 @@ Choisissez un power-up avant chaque partie pour renforcer votre vaisseau.
 L’environnement dans lequel vous jouez influence fortement la difficulté et les mécaniques de jeu. Chaque carte est unique !
 
 ### **Ring of Ruin**  
-![Ring of Ruin](./images/ring_of_ruin.png)  
+![Ring of Ruin](images/map1.jpg)  
 Une planète rouge-orangée entourée d’un anneau de débris en perpétuel mouvement.
 
 ### **Moonfall Nexus**  
-![Moonfall Nexus](./images/moonfall_nexus.png)  
+![Moonfall Nexus](images/map2.jpg)  
 Une planète bleue avec sa lune, traversée par de puissantes tempêtes cosmiques. Attention aux astéroides !
 
 ### **Void Drift**  
-![Void Drift](./images/void_drift.png)  
+![Void Drift](images/map3.jpg)  
 Une zone instable remplie d’astéroïdes et d’une supernova en explosion. Seuls les pilotes les plus habiles peuvent survivre ici.
 
 ---
